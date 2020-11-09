@@ -1,0 +1,9 @@
+.element__content {
+  padding: 22px 15px 28px 21px;
+  margin-top: -3px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 0 0 10px 10px;
+}

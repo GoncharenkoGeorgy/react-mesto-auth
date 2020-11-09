@@ -1,0 +1,7 @@
+.popup__fields {
+  display: flex;
+  margin: auto;
+  box-shadow: none;
+  padding: 0;
+  border: none;
+}

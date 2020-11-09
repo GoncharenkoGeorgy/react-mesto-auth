@@ -1,0 +1,22 @@
+.profile__info-heading {
+  margin: 0;
+  margin-right: 17px;
+  color: white;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 56px;
+}
+
+@media screen and (max-width: 710px){
+  .profile__info-heading {
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 420px){
+  .profile__info-heading {
+    font-size: 27px;
+    line-height: 56px;
+  }
+}

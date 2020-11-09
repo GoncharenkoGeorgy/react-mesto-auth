@@ -1,0 +1,15 @@
+.element__pic_active {
+  max-width: 75vw;
+  max-height: 75vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0;
+  cursor: unset;
+}
+
+@media screen and (max-width: 610px) {
+.element__pic_active {
+    min-height: auto;
+  }
+}

@@ -1,0 +1,16 @@
+.profile__avatar-button {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  background-position: 50%;
+  box-sizing: border-box;
+  border: none;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: 50%;  
+}
+
+.profile__avatar-button:hover {
+   background-image: url(../../../images/Editavatar.png);
+}

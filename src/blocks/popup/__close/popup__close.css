@@ -1,0 +1,50 @@
+.popup__close {
+  position: absolute;
+  padding: 0;
+  left: 100%;
+  bottom: 100%;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  box-shadow: none;
+  border: none;
+  background-color: unset;
+  background-image: url(../../../images/CloseIcon.png);
+  object-fit: contain;
+  background-repeat: no-repeat;
+  background-position: center;  
+  visibility: hidden;
+}
+
+.popup_opened .popup__close {
+  visibility: visible;
+}
+
+.popup__close:hover {
+  opacity: 0.6; 
+  transition: 0.2s linear 0.1s;
+}
+
+@media screen and (max-width: 520px){
+  .popup__close {
+  }
+}
+
+@media screen and (max-width: 470px){
+  .popup__close {
+      cursor: pointer;
+      width: 34px;
+      height: 40px;
+      background-size: 100%;
+      left: 98%;
+      bottom: 98%;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .popup__close {
+      width: 25px;
+      height: 25px;
+      background-size: 100%;
+  }
+}

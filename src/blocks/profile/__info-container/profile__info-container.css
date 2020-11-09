@@ -1,0 +1,12 @@
+.profile__info-container {
+  margin: 18px 0 35px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 710px){
+  .profile__info-container {
+    margin: 14px auto 36px;
+    flex-direction: column;
+  }
+}
