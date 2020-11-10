@@ -66,14 +66,14 @@ function AddPlacePopup(props) {
         <input
           type='url'
           className='popup__input'
-          id='url-input'
+          id='pic-url-input'
           name='link'
           placeholder='Ссылка на картинку'
           required
           ref={linkRef}
           onChange={handleChangeLink}
         />
-        <span className='popup__input-error' id='url-input-error'></span>
+        <span className='popup__input-error' id='pic-url-input-error'></span>
       </label>
     </PopupWithForm>
   );

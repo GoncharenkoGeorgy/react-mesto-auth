@@ -1,0 +1,11 @@
+.header__signin {
+  padding-top: 6px;
+  margin-left: 24px;
+  color: #fff;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  text-decoration: none;
+}

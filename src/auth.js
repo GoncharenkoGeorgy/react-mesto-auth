@@ -1,7 +1,7 @@
 export const BASE_URL = 'https://auth.nomoreparties.co';
 
 export const login = (email, password) => {
-  return fetch(`${BASE_URL}/sign-in`, {
+  return fetch(`${BASE_URL}/signin`, {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
@@ -15,8 +15,8 @@ export const login = (email, password) => {
       return res.json();
     })
     .then((data) => {
-      if (data.jwt) {
-        localStorage.setItem('jwt', data.jwt);
+      if (data.token) {
+        localStorage.setItem('token', data.token);
         return data;
       }
     })
@@ -24,7 +24,7 @@ export const login = (email, password) => {
 }
 
 export const register = (email, password) => {
-  return fetch(`${BASE_URL}/sign-up`, {
+  return fetch(`${BASE_URL}/signup`, {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
@@ -37,9 +37,6 @@ export const register = (email, password) => {
     .then((res) => {
       return res.json();
     })
-    .then((res) => {
-      return res;
-    })
     .catch(err => console.log(err))
 }
 
@@ -51,7 +48,7 @@ export const checkToken = (token) => {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`
     }
-      .then((res) => res.json())
-      .then(data => data)
   })
+    .then((res) => res.json())
+    .then(data => data)
 }

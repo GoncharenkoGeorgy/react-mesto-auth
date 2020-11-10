@@ -1,13 +1,11 @@
 import React from 'react';
-import { Link, withRouter, useHistory } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 const Login = (props) => {
   const { onLogin } = props;
 
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('')
-
-  //const history = useHistory();
 
   const handleChangeEmail = (e) => {
     setEmail(e.target.value);
@@ -25,7 +23,6 @@ const Login = (props) => {
       return;
     }
     onLogin(email, password);
-    //history.push('/');
     setEmail('');
     setPassword('');
   }
@@ -37,27 +34,27 @@ const Login = (props) => {
         <input
           type='text'
           className='login__input'
-          id='email'
+          id='log-email'
           name='email'
           placeholder='Email'
           value={email}
           onChange={handleChangeEmail}
           required
         />
-        <span className='login__input-error' id='url-input-error'></span>
+        <span className='popup__input-error' id='popup-input-error'></span>
       </label>
       <label htmlFor='password' className='login__fields'>
         <input
           type='password'
           className='login__input'
-          id='url-input'
+          id='log-pas'
           name='password'
           placeholder='Пароль'
           value={password}
           onChange={handleChangePassword}
           required
         />
-        <span className='popup__input-error' id='password-input-error'></span>
+        <span className='popup__input-error' id='popup-input-error'></span>
       </label>
       <button type="submit" className="login__button">Войти</button>
       <div className="login__signup">

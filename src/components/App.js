@@ -144,15 +144,20 @@ function App() {
   function handleLogin(email, password) {
     auth.login(email, password)
       .then((data) => {
-        if (data.jwt) {
+        if (data.token) {
           handleInfoTooltip(true);
           setLoggedIn(true);
           history.push('/');
+          console.log(data);
         }
       })
       .catch((err) => {
         handleInfoTooltip(false);
-        console.log(err);
+        if (err === 400) {
+          console.log('Не передано одно из полей');
+        } else if (err === 401) {
+          console.log('Пользователь с таким email не найден');
+        }
       })
   }
 
@@ -164,7 +169,9 @@ function App() {
       })
       .catch((err) => {
         handleInfoTooltip(false);
-        console.log(err);
+        if (err === 400) {
+          console.log('Некорректно заполнено одно из полей');
+        }
       })
   }
 
@@ -174,8 +181,8 @@ function App() {
   }
 
   function handleTokenCheck() {
-    if (localStorage.getItem('jwt')) {
-      const jwt = localStorage.getItem('jwt');
+    const jwt = localStorage.getItem('token');
+    if (jwt) {
       auth.checkToken(jwt)
         .then((res) => {
           if (res) {
@@ -197,10 +204,15 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  function handleLogout() {
+    localStorage.removeItem('token');
+    history.push('/sign-in');
+  }
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
-        <Header />
+        <Header onOut={handleLogout} />
 
         <Switch>
           <ProtectedRoute

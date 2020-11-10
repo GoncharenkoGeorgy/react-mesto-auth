@@ -1,6 +1,13 @@
 @import url(./__logo/header__logo.css);
+@import url(./__email/header__email.css);
+@import url(./__signconteiner/header__signconteiner.css);
+@import url(./__signout/header__signout.css);
+@import url(./__signin/header__signin.css);
 
 .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   max-width: 882px;
   min-height: 74px;
   margin: auto;

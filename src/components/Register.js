@@ -30,27 +30,27 @@ const Register = (props) => {
         <input
           type='text'
           className='register__input'
-          id='email'
+          id='reg-email'
           name='email'
           placeholder='Email'
           value={email}
           onChange={handleChangeEmail}
           required
         />
-        <span className='register__input-error' id='url-input-error'></span>
+        <span className='popup__input-error' id='popup-input-error'></span>
       </label>
       <label htmlFor='password' className='register__fields'>
         <input
           type='password'
           className='register__input'
-          id='url-input'
+          id='reg-pas'
           name='password'
           placeholder='Пароль'
           value={password}
           onChange={handleChangePassword}
           required
         />
-        <span className='register__input-error' id='password-input-error'></span>
+        <span className='popup__input-error' id='popup-input-error'></span>
       </label>
       <button type="submit" className="register__button">Зарегистрироваться</button>
       <div className="register__signup">

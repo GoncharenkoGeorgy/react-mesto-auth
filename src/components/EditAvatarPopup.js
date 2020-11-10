@@ -40,13 +40,13 @@ function EditAvatarPopup(props) {
         <input
           type='url'
           className='popup__input'
-          id='url-input'
+          id='ava-url-input'
           name='link'
           placeholder='Ссылка на аватар'
           required
           ref={inputRef}
         />
-        <span className='popup__input-error' id='url-input-error'></span>
+        <span className='popup__input-error' id='ava-url-input-error'></span>
       </label>
     </PopupWithForm>
 
