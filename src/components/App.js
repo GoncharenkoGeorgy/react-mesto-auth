@@ -148,7 +148,6 @@ function App() {
           handleInfoTooltip(true);
           setLoggedIn(true);
           history.push('/');
-          console.log(data);
         }
       })
       .catch((err) => {
@@ -201,7 +200,7 @@ function App() {
 
   React.useEffect(() => {
     handleTokenCheck();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function handleLogout() {

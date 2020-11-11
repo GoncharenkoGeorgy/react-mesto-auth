@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../images/Vectorll.svg';
 import * as auth from '../auth.js';
-import { Route, Switch, Link, BrowserRouter, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export { Header }
 
@@ -46,10 +46,10 @@ function Header(props) {
 
     <header className="header">
       <img className="header__logo" src={logo} alt="Mesto" />
-            <nav className="header__signconteiner">
-              <p className="header__email">{email}</p>
-              {loggedIn ? <p className="header__signout" onClick={onOut}>Выйти</p> : <Link to={link} className="header__signin">{sign}</Link>}
-            </nav>
+        <nav className="header__signconteiner">
+          <p className="header__email">{email}</p>
+          {loggedIn ? <p className="header__signout" onClick={onOut}>Выйти</p> : <Link to={link} className="header__signin">{sign}</Link>}
+        </nav>
     </header>
 
   );
