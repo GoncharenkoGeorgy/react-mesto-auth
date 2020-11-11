@@ -222,7 +222,7 @@ function App() {
               cards={cards}
               onCardClick={handleCardClick}
               onCardLike={handleCardLike}
-              onCardDelete={handleCardDelete}
+              onCardDelete={handleDeletePlaceClick}
               onEditProfile={handleEditProfileClick}
               onAddPlace={handleAddPlaceClick}
               onEditAvatar={handleEditAvatarClick}
