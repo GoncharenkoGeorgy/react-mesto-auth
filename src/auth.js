@@ -11,16 +11,18 @@ export const login = (email, password) => {
       email, password
     })
   })
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => {
-      if (data.token) {
-        localStorage.setItem('token', data.token);
-        return data;
-      }
-    })
-    .catch(err => console.log(err))
+  .then(res => {
+    if (!res.ok) {
+      return Promise.reject(`Ошибка: ${res.status}`)
+    }
+    return res.json()
+  })
+  .then((data) => {
+    if (data.token) {
+      localStorage.setItem('token', data.token);
+      return data;
+    }
+  })
 }
 
 export const register = (email, password) => {
@@ -34,10 +36,12 @@ export const register = (email, password) => {
       email, password
     })
   })
-    .then((res) => {
-      return res.json();
-    })
-    .catch(err => console.log(err))
+  .then(res => {
+    if (!res.ok) {
+      return Promise.reject(`Ошибка: ${res.status}`)
+    }
+    return res.json()
+  })
 }
 
 export const checkToken = (token) => {
@@ -49,6 +53,11 @@ export const checkToken = (token) => {
       'Authorization': `Bearer ${token}`
     }
   })
-    .then((res) => res.json())
-    .then(data => data)
+  .then(res => {
+    if (!res.ok) {
+      return Promise.reject(`Ошибка: ${res.status}`)
+    }
+    return res.json()
+  })
+  .then(data => data)
 }
