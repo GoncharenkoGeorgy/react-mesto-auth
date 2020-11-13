@@ -12,10 +12,10 @@ export const login = (email, password) => {
     })
   })
   .then(res => {
-    if (!res.ok) {
-      return Promise.reject(`Ошибка: ${res.status}`)
+    if (res.ok) {
+      return res.json();
     }
-    return res.json()
+    return Promise.reject(`Ошибка: ${res.status}`);
   })
   .then((data) => {
     if (data.token) {
@@ -37,10 +37,10 @@ export const register = (email, password) => {
     })
   })
   .then(res => {
-    if (!res.ok) {
-      return Promise.reject(`Ошибка: ${res.status}`)
+    if (res.ok) {
+      return res.json();
     }
-    return res.json()
+    return Promise.reject(`Ошибка: ${res.status}`);
   })
 }
 
@@ -54,10 +54,10 @@ export const checkToken = (token) => {
     }
   })
   .then(res => {
-    if (!res.ok) {
-      return Promise.reject(`Ошибка: ${res.status}`)
+    if (res.ok) {
+      return res.json();
     }
-    return res.json()
+    return Promise.reject(`Ошибка: ${res.status}`);
   })
   .then(data => data)
 }
